@@ -4,12 +4,13 @@ provider "aws" {
   region = "${var.region}"
 }
 
+
 terraform {
-  backend "s3" {
-  bucket = "rc-tf-remote-state-bucket"
-  key = "terraform.tfstate"
-  region = "us-east-1"
-  }
+    backend "s3" {
+    bucket = "rohan-tf-remote-state"
+    key = "terraform.tfstate"
+    region = "us-east-1"
+    }
 }
 
 resource "aws_ecs_cluster" "ecs-cluster-1" {
