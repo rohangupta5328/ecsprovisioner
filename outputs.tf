@@ -1,5 +1,5 @@
 
-output "clusterName_1" {
+output "clusterName" {
     value = "${var.ecs-cluster-1}"
 }
 output "region" {
@@ -7,5 +7,5 @@ output "region" {
 }
 
 output "harness" {
-    value = "bar"
+    value = "blackbekt"
     }
