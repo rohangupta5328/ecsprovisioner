@@ -40,7 +40,7 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
     lifecycle {
       create_before_destroy = true
     }
-    security_groups             = ["sg-37f61246"]
+    security_groups             = ["sg-09c26ec2d2a3820a0"]
     associate_public_ip_address = "true"
     key_name                    = "harness"
     user_data                   = <<EOF
