@@ -7,5 +7,5 @@ output "region" {
 }
 
 output "harness" {
-    value = "blackbekt"
+    value = "blackbelt"
     }
