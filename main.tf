@@ -45,6 +45,6 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
     key_name                    = "harness"
     user_data                   = <<EOF
                                   #!/bin/bash
-                                  echo ECS_CLUSTER=${var.ecs-cluster-1} >> /etc/ecs/ecs.config
+                                  echo ECS_CLUSTER=${var.clusterName} >> /etc/ecs/ecs.config
                                   EOF
 }
