@@ -1,6 +1,6 @@
 
-output "clusterName" {
-    value = "${var.clusterName}"
+output "cluster" {
+    value = "${var.cluster}"
 }
 output "region" {
     value = "${var.region}"
