@@ -2,7 +2,7 @@ variable "access_key" {}
 variable "secret_key" {}
 
 variable "region" {}
-variable "clusterName" {}
+variable "cluster" {}
 
 variable "capacity" {
   default = "2"
