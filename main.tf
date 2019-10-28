@@ -14,12 +14,12 @@ terraform {
 }
 
 resource "aws_ecs_cluster" "ecs-cluster-1" {
-    name = "${var.clusterName}"
+    name = "${var.cluster}"
 
 }
 
   resource "aws_autoscaling_group" "ecs-autoscaling-group-1" {
-    name                        = "ecs-asg-${var.clusterName}"
+    name                        = "ecs-asg-${var.cluster}"
     max_size                    = "4"
     min_size                    = "1"
     desired_capacity            = "${var.capacity}"
@@ -28,7 +28,7 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
     health_check_type           = "ELB"
   }
   resource "aws_launch_configuration" "ecs-launch-configuration-1" {
-    name                        = "ecs-lb-${var.clusterName}"
+    name                        = "ecs-lb-${var.cluster}"
     image_id                    = "ami-0b9a214f40c38d5eb"
     instance_type               = "t2.medium"
     iam_instance_profile        = "ecsInstanceRole"
@@ -45,6 +45,6 @@ resource "aws_ecs_cluster" "ecs-cluster-1" {
     key_name                    = "adminRohan"
     user_data                   = <<EOF
                                   #!/bin/bash
-                                  echo ECS_CLUSTER=${var.clusterName} >> /etc/ecs/ecs.config
+                                  echo ECS_CLUSTER=${var.cluster} >> /etc/ecs/ecs.config
                                   EOF
 }
